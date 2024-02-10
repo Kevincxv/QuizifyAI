@@ -2,7 +2,6 @@ import streamlit as st
 
 st.set_page_config(page_title="Quiz Generator")
 
-# Updated Custom CSS
 st.markdown(
     """
     <style>
@@ -56,23 +55,23 @@ st.markdown(
 
 st.title("We Are Quizmify")
 
-# Input fields with updated labels
+
 textbook_url = st.text_input("Enter the textbook URL", key="textbook_url")
 page_range = st.text_input("Page Range", key="page_range")
 question_type = st.radio("Question Type", ['FRQ', 'MCQ'], key="question_type", horizontal=True)
 num_questions = st.number_input("Number of Questions", min_value=1, max_value=100, step=1, key="num_questions")
 difficulty = st.radio("Difficulty", ['Easy', 'Medium', 'Hard'], key="difficulty", horizontal=True)
 
-# Placeholder for dynamically displaying quiz questions and answers
+
 quiz_placeholder = st.empty()
 answers_placeholder = st.empty()
 
-# Generate Quiz and Show Answers buttons with placeholder functionality
+
 if st.button("Generate Quiz"):
     if not textbook_url or not page_range:
         st.error("Please fill in all fields.")
     else:
-        # Placeholder for backend API call to generate quiz
+        
         quiz = {
             "questions": ["What is X?", "How does Y work?"],
             "answers": ["X is...", "Y works by..."]
